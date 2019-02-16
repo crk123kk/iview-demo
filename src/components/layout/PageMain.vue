@@ -7,7 +7,7 @@
                 <PageSliderMenu/>
             </Sider>
             <Content class="page-main-content">
-                SDFSDF
+                <router-view></router-view>
             </Content>
         </Layout>
         <PageFooter/>
