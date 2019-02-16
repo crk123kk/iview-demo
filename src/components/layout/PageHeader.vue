@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'TopTitle',
+  name: 'PageHeader',
   data () {
     return {
     }
