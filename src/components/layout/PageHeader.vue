@@ -13,7 +13,7 @@ export default {
   name: "PageHeader",
   data() {
     return {
-      headerMessage: 'xxxxxx管理平台'
+      headerMessage: "xxxxxx管理平台"
     };
   }
 };

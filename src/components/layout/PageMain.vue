@@ -21,9 +21,12 @@
             active-name="1"
             class="menu-tabs"
           >
-            <MenuItem name="icon">
-            <Icon
+            <MenuItem
+              name="icon"
+              class="menu-icon"
               @click.native="collapsedSider"
+            >
+            <Icon
               :class="rotateIcon"
               :style="{margin: '0 20px'}"
               type="md-menu"
@@ -45,7 +48,7 @@
         <router-view></router-view>
       </Content>
     </Layout>
-    <!-- <PageFooter /> -->
+    <PageFooter />
   </div>
 </template>
 
@@ -142,7 +145,6 @@ export default {
 </script>
 
 <style scoped>
-
 .page-main-slide {
   background-color: #ffffff;
   padding: 16px;
@@ -208,5 +210,9 @@ export default {
 
 .ivu-tree-tit {
   color: #ffffff;
+}
+
+.menu-icon {
+  padding: 0;
 }
 </style>

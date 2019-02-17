@@ -1,5 +1,5 @@
 <template>
-  <Layout class="index-page">
+  <Layout class="index-page" :style="{height: screenH +'px'}">
     <Content class="index-main">
       <div class="index-main-form">
         <Select
@@ -120,8 +120,15 @@ export default {
           label: "Canberra"
         }
       ],
-      model1: ""
+      model1: "",
     };
+  },
+  computed: {
+    screenH: function () {
+      console.log(window.screen.height);
+      let h = window.screen.height - 390;
+      return h;
+    }
   },
   methods: {
     show(index) {

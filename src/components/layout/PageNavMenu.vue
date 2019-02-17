@@ -60,5 +60,9 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.ivu-menu-dark.ivu-menu-horizontal .ivu-menu-item-active,
+.ivu-menu-dark.ivu-menu-horizontal .ivu-menu-item:hover {
+  background-color: darkturquoise;
+}
 </style>
 
