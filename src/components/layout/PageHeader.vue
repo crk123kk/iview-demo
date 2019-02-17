@@ -1,7 +1,7 @@
 <template>
   <div>
     <Layout>
-      <Header>
+      <Header class="page-header">
         <div class="app-title">{{headerMessage}}</div>
       </Header>
     </Layout>
@@ -20,6 +20,9 @@ export default {
 </script>
 
 <style scoped>
+.page-header {
+  background-color: rgb(49, 43, 163);
+}
 .app-title {
   color: #ffffff;
   font-size: 24px;

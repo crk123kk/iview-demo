@@ -8,7 +8,7 @@ export default {
   name: "PageFooter",
   data() {
     return {
-      footerMesage: '2011-2016 @ TalkingData'
+      footerMesage: "2011-2016 @ TalkingData"
     };
   }
 };
@@ -18,5 +18,8 @@ export default {
 .page-footer {
   border-top: 1px solid #d7dde4;
   text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 </style>

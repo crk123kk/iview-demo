@@ -1,26 +1,15 @@
 <template>
-  <Menu
-    active-name="1-2"
-    theme="dark"
-    width="auto"
-    :open-names="['1']"
-  >
-    <Submenu
-      v-for="(city, index) in cities"
-      :key="'city' + index"
-      :name="'city' + index"
-    >
-      <template slot="title">
-        <Icon type="ios-navigate"></Icon>
-        {{city.name}}
-      </template>
-      <MenuItem
-        v-for="(branch, i) in city.childern"
-        :key="'branch' + i"
-        :name="'branch' + i"
-      >{{branch}}</MenuItem>
-    </Submenu>
-  </Menu>
+  <div class="page-slider">
+    <Input
+      class="page-slider-search"
+      search
+      placeholder="Enter something..."
+    />
+    <Tree
+      class="page-slider-tree"
+      :data="data1"
+    ></Tree>
+  </div>
 </template>
 
 <script>
@@ -28,13 +17,71 @@ export default {
   name: "PageSliderMenu",
   data() {
     return {
-      cities: [
-        { name: "泉州市", childern: ["晋江", "石狮", "丰泽"] },
-        { name: "漳州市", childern: ["长泰"] },
-        { name: "永安市", childern: ["永安", "桃源"] },
-        { name: "三明市", childern: ["长沙"] }
+      data1: [
+        {
+          title: "福建省",
+          expand: true,
+          children: [
+            {
+              title: "泉州市",
+              expand: true,
+              children: [
+                {
+                  title: "晋江"
+                },
+                {
+                  title: "石狮"
+                },
+                {
+                  title: "丰泽"
+                }
+              ]
+            },
+            {
+              title: "漳州市",
+              expand: true,
+              children: [
+                {
+                  title: "长泰"
+                }
+              ]
+            },
+            {
+              title: "福州市",
+              expand: true,
+              children: [
+                {
+                  title: "闽侯"
+                },
+                {
+                  title: "福清"
+                }
+              ]
+            },
+            {
+              title: "三明",
+              expand: true,
+              children: [
+                {
+                  title: "沙县"
+                }
+              ]
+            }
+          ]
+        }
       ]
     };
   }
 };
 </script>
+
+<style scoped>
+.page-slider-tree {
+  margin: 16px 0 0 0;
+}
+
+.page-slider-tree .ivu-tree-tit {
+  color: #ffffff;
+}
+</style>
+
