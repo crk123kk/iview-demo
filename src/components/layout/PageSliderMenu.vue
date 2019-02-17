@@ -1,62 +1,40 @@
 <template>
-  <Sider
-    hide-trigger
-    :style="{background: 'transparent'}"
+  <Menu
+    active-name="1-2"
+    theme="dark"
+    width="auto"
+    :open-names="['1']"
   >
-    <Menu
-      active-name="1-2"
-      theme="dark"
-      width="auto"
-      :open-names="['1']"
+    <Submenu
+      v-for="(city, index) in cities"
+      :key="'city' + index"
+      :name="'city' + index"
     >
-      <Submenu name="1">
-        <template slot="title">
-          <Icon type="ios-navigate"></Icon>
-          Item 1
-        </template>
-        <MenuItem name="1-1">Option 1</MenuItem>
-        <MenuItem name="1-2">Option 2</MenuItem>
-        <MenuItem name="1-3">Option 3</MenuItem>
-      </Submenu>
-      <Submenu name="2">
-        <template slot="title">
-          <Icon type="ios-keypad"></Icon>
-          Item 2
-        </template>
-        <MenuItem name="2-1">Option 1</MenuItem>
-        <MenuItem name="2-2">Option 2</MenuItem>
-      </Submenu>
-      <Submenu name="3">
-        <template slot="title">
-          <Icon type="ios-analytics"></Icon>
-          Item 3
-        </template>
-        <MenuItem name="3-1">Option 1</MenuItem>
-        <MenuItem name="3-2">Option 2</MenuItem>
-      </Submenu>
-      <Submenu name="4">
-        <template slot="title">
-          <Icon type="ios-analytics"></Icon>
-          Item 4
-        </template>
-        <MenuItem name="4-1">Option 1</MenuItem>
-        <MenuItem name="4-2">Option 2</MenuItem>
-      </Submenu>
-      <Submenu name="5">
-        <template slot="title">
-          <Icon type="ios-analytics"></Icon>
-          Item 5
-        </template>
-        <MenuItem name="5-1">Option 1</MenuItem>
-        <MenuItem name="5-2">Option 2</MenuItem>
-      </Submenu>
-
-    </Menu>
-  </Sider>
+      <template slot="title">
+        <Icon type="ios-navigate"></Icon>
+        {{city.name}}
+      </template>
+      <MenuItem
+        v-for="(branch, i) in city.childern"
+        :key="'branch' + i"
+        :name="'branch' + i"
+      >{{branch}}</MenuItem>
+    </Submenu>
+  </Menu>
 </template>
 
 <script>
 export default {
-  name: "PageSliderMenu"
+  name: "PageSliderMenu",
+  data() {
+    return {
+      cities: [
+        { name: "泉州市", childern: ["晋江", "石狮", "丰泽"] },
+        { name: "漳州市", childern: ["长泰"] },
+        { name: "永安市", childern: ["永安", "桃源"] },
+        { name: "三明市", childern: ["长沙"] }
+      ]
+    };
+  }
 };
 </script>

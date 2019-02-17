@@ -1,13 +1,15 @@
 <template>
   <Layout>
-    <Footer class="page-footer">2011-2016 &copy; TalkingData</Footer>
+    <Footer class="page-footer">{{footerMesage}}</Footer>
   </Layout>
 </template>
 <script>
 export default {
   name: "PageFooter",
   data() {
-    return {};
+    return {
+      footerMesage: '2011-2016 @ TalkingData'
+    };
   }
 };
 </script>

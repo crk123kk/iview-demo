@@ -2,7 +2,7 @@
   <div>
     <Layout>
       <Header>
-        <div class="app-title">xxxxxx管理平台</div>
+        <div class="app-title">{{headerMessage}}</div>
       </Header>
     </Layout>
   </div>
@@ -12,7 +12,9 @@
 export default {
   name: "PageHeader",
   data() {
-    return {};
+    return {
+      headerMessage: 'xxxxxx管理平台'
+    };
   }
 };
 </script>

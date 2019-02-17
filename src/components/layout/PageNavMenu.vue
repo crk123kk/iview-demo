@@ -1,15 +1,15 @@
 <template>
   <div>
     <Menu
+      theme="light"
       mode="horizontal"
-      :theme="theme1"
       active-name="1"
       class="navigation-bar"
     >
       <MenuItem
+        class="navigation-bar-item"
         v-for="(menu, index) in menuList"
         :key="index"
-        @click.native="navigationToPage"
         :name="index"
         :style="{width: (100/menuList.length) +'%'}"
         :title="menu.name"
@@ -28,8 +28,13 @@ export default {
   name: "PageNavMenu",
   data() {
     return {
-      theme1: "light",
       menuList: [
+        { name: "首页", url: "/home" },
+        { name: "登录", url: "/login" },
+        { name: "用户", url: "/user" },
+        { name: "内容管理", url: "/contentManagement" },
+        { name: "设置", url: "/settings" },
+        { name: "统计", url: "/statistics" },
         { name: "首页", url: "/home" },
         { name: "登录", url: "/login" },
         { name: "用户", url: "/user" },
@@ -39,11 +44,7 @@ export default {
       ]
     };
   },
-  methods: {
-    navigationToPage: function() {
-      console.log("sdfsdf");
-    }
-  }
+  methods: {}
 };
 </script>
 
@@ -53,7 +54,8 @@ export default {
   overflow: hidden;
 }
 
-.navigation-bar > li {
+.navigation-bar-item {
+  text-align: center;
   padding: 0 12px;
   white-space: nowrap;
   overflow: hidden;
