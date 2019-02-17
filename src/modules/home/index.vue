@@ -140,9 +140,6 @@ export default {
 </script>
 
 <style scoped>
-.index-page {
-  /* background-color: #ffffff; */
-}
 .menu-tabs {
   width: 100%;
   overflow: hidden;

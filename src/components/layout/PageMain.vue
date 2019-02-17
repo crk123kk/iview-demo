@@ -142,10 +142,6 @@ export default {
 </script>
 
 <style scoped>
-.page-main {
-  /* padding: 0 50px;
-  margin: 24px 0; */
-}
 
 .page-main-slide {
   background-color: #ffffff;
