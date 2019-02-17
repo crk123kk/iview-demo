@@ -10,18 +10,17 @@
 
 <script>
 export default {
-  name: 'PageHeader',
-  data () {
-    return {
-    }
+  name: "PageHeader",
+  data() {
+    return {};
   }
-}
+};
 </script>
 
 <style scoped>
 .app-title {
-    color: #ffffff;
-    font-size: 24px;
-    letter-spacing: 4px;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 4px;
 }
 </style>
