@@ -14,33 +14,22 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'PageMain',
+      redirect: 'login'
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/home',
+      name: 'home',
       redirect: '/home',
       component: PageMain,
       children: [
         {
-          path: '/home',
+          path: '/',
           component: Home
-        },
-        {
-          path: '/login',
-          component: Login
-        },
-        {
-          path: '/user',
-          component: User
-        },
-        {
-          path: '/settings',
-          component: Settings
-        },
-        {
-          path: '/contentManagement',
-          component: ContentManagement
-        },
-        {
-          path: '/statistics',
-          component: Statistics
         }
       ]
     }

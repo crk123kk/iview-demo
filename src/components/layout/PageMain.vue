@@ -146,7 +146,7 @@ export default {
 
 <style scoped>
 .page-main-slide {
-  background-color: #ffffff;
+  background-color: #eeeeee;
   padding: 16px;
   border-right: 1px solid #ddd;
 }

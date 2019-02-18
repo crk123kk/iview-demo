@@ -3,14 +3,14 @@
     <Menu
       theme="dark"
       mode="horizontal"
-      active-name="1"
+      active-name="0"
       class="navigation-bar"
     >
       <MenuItem
         class="navigation-bar-item"
         v-for="(menu, index) in menuList"
         :key="index"
-        :name="index"
+        :name="index+''"
         :title="menu.name"
         :to="menu.url"
       >

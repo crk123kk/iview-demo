@@ -125,8 +125,7 @@ export default {
   },
   computed: {
     screenH: function () {
-      console.log(window.screen.height);
-      let h = window.screen.height - 390;
+      let h = window.innerHeight - 242;
       return h;
     }
   },
