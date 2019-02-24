@@ -4,7 +4,7 @@
       <div class="index-main-form">
         <Select
           v-model="model1"
-          style="width:200px"
+          style="width:200px;"
         >
           <Option
             v-for="item in cityList"
@@ -12,12 +12,37 @@
             :key="item.value"
           >{{ item.label }}</Option>
         </Select>
+
+        <Select
+          v-model="model1"
+          style="width:200px;"
+        >
+          <Option
+            v-for="item in cityList"
+            :value="item.value"
+            :key="item.value"
+          >{{ item.label }}</Option>
+        </Select>
+
+        <Select
+          v-model="model1"
+          style="width:200px;"
+        >
+          <Option
+            v-for="item in cityList"
+            :value="item.value"
+            :key="item.value"
+          >{{ item.label }}</Option>
+        </Select>
+        
       </div>
       <div class="main-table">
         <Table
           border
           :columns="columns12"
           :data="data6"
+          size="small"
+          stripe 
         >
           <template
             slot-scope="{ row }"
@@ -92,6 +117,11 @@ export default {
           name: "Jon Snow",
           age: 26,
           address: "Ottawa No. 2 Lake Park"
+        },
+        {
+          name: "Jim Green",
+          age: 24,
+          address: "London No. 1 Lake Park"
         }
       ],
       cityList: [
@@ -146,19 +176,6 @@ export default {
 </script>
 
 <style scoped>
-.menu-tabs {
-  width: 100%;
-  overflow: hidden;
-  /* background-color: rgb(203, 204, 153); */
-}
-
-.menu-tabs-item {
-  text-align: center;
-  padding: 0 24px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 
 .index-main {
   padding: 16px;
@@ -171,6 +188,10 @@ export default {
 }
 .main-table {
   margin: 8px;
+}
+
+.ivu-table td, .ivu-table th {
+  height: 36px;
 }
 </style>
 

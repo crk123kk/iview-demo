@@ -14,34 +14,34 @@
         <PageSliderMenu />
       </Sider>
       <Content class="page-main-content">
-        <div>
+        <div class="main-content-header">
           <Menu
             theme="light"
             mode="horizontal"
-            active-name="1"
+            active-name="0"
             class="menu-tabs"
           >
-            <MenuItem
+            <div
               name="icon"
               class="menu-icon"
-              @click.native="collapsedSider"
+              @click="collapsedSider"
             >
-            <Icon
-              :class="rotateIcon"
-              :style="{margin: '0 20px'}"
-              type="md-menu"
-              size="24"
-            ></Icon>
-            </MenuItem>
+              <Icon
+                :class="rotateIcon"
+                :style="{margin: '0 20px'}"
+                type="md-menu"
+                size="24"
+              ></Icon>
+            </div>
             <MenuItem
               class="menu-tabs-item"
               v-for="(menu, index) in menuList"
               :key="index"
-              :name="index"
+              :name="index+''"
               :title="menu.name"
               :to="menu.url"
             >
-            {{menu.name}}
+            {{menu.name}} ({{menu.number}})
             </MenuItem>
           </Menu>
         </div>
@@ -68,9 +68,9 @@ export default {
   data() {
     return {
       menuList: [
-        { name: "调用财务清单", url: "/home" },
-        { name: "调用记录", url: "/login" },
-        { name: "归还记录", url: "/user" }
+        { name: "调用财务清单", url: "/home", number: "12" },
+        { name: "调用记录", url: "/home", number: "0" },
+        { name: "归还记录", url: "/home", number: "1" }
       ],
       isCollapsed: false,
       data1: [
@@ -158,23 +158,9 @@ export default {
   /* margin: 0 24px; */
 }
 
-.layout {
-  border: 1px solid #d7dde4;
-  background: #f5f7f9;
-  position: relative;
-  border-radius: 4px;
-  overflow: hidden;
-}
-.layout-header-bar {
-  background: #fff;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-}
-.layout-logo-left {
-  width: 90%;
-  height: 30px;
-  background: #5b6270;
-  border-radius: 3px;
-  margin: 15px auto;
+.main-content-header ul {
+  height: 48px;
+  line-height: 48px;
 }
 .menu-icon {
   transition: all 0.3s;
@@ -182,37 +168,10 @@ export default {
 .rotate-icon {
   transform: rotate(-90deg);
 }
-.menu-item span {
-  display: inline-block;
-  overflow: hidden;
-  width: 69px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  vertical-align: bottom;
-  transition: width 0.2s ease 0.2s;
-}
-.menu-item i {
-  transform: translateX(0px);
-  transition: font-size 0.2s ease, transform 0.2s ease;
-  vertical-align: middle;
-  font-size: 16px;
-}
-.collapsed-menu span {
-  width: 0px;
-  transition: width 0.2s ease;
-}
-.collapsed-menu i {
-  transform: translateX(5px);
-  transition: font-size 0.2s ease 0.2s, transform 0.2s ease 0.2s;
-  vertical-align: middle;
-  font-size: 22px;
-}
-
-.ivu-tree-tit {
-  color: #ffffff;
-}
 
 .menu-icon {
   padding: 0;
+  float: left;
+  padding: 6px 0;
 }
 </style>

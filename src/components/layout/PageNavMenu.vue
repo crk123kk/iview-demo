@@ -51,7 +51,7 @@ export default {
   overflow: hidden;
   height: 48px;
   line-height: 48px;
-  background-color: cornflowerblue;
+  background-color: #7cbce9;
 }
 
 .navigation-bar-item {
@@ -62,7 +62,11 @@ export default {
 }
 .ivu-menu-dark.ivu-menu-horizontal .ivu-menu-item-active,
 .ivu-menu-dark.ivu-menu-horizontal .ivu-menu-item:hover {
-  background-color: darkturquoise;
+  background-color: #0f8de9;
+}
+.ivu-menu-dark.ivu-menu-horizontal .ivu-menu-item,
+.ivu-menu-dark.ivu-menu-horizontal .ivu-menu-submenu {
+  color: #ffffff;
 }
 </style>
 
